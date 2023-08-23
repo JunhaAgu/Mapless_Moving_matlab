@@ -48,7 +48,7 @@ We evaluate with *00*, *01*, *02*, *05* and *07* of **KITTI odometry**, and *tow
 
 Download datasets - [Download link](https://larr.snu.ac.kr/drive/d/s/uulKtWN4b41HXBNk92QigruwP2eBMqhY/4-Lw2fCmp5F_xCIgcX2TNC_qzBnMwVFd-HbYgiTNDsQo)
 
-## 2) How to run MATLAB version ?
+## 2) How to run OMMOCAR MATLAB ver.?
 ### (a) Dependencies
 Recommend: MATLAB version >= 2021b with Windows 10.
 
