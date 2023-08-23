@@ -37,7 +37,7 @@ inliers_cell = cell(1, n_col_sample);
 mask_inlier_cell = cell(1, n_col_sample);
 mask_inlier_mat = zeros(n_row, n_col_sample);
 
-paramRANSAC.iter = 50;
+paramRANSAC.iter = 25;
 paramRANSAC.thr = 0.1;
 paramRANSAC.a_thr = 0.1; %abs
 paramRANSAC.b_thr = [-0.5, -1.2]; %under

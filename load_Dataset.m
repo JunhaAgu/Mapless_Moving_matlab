@@ -9,9 +9,9 @@ end
 %% load dataset
 if data_type == "KITTI"
     dataset_dir = 'E:/KITTI_odometry';
-    data_num    = '01';
+    data_num    = '00';
 elseif data_type == "CARLA"
-    dataset_dir = 'H:/mapless_dataset';
+    dataset_dir = 'H:/mapless_dataset/CARLA';
     data_num    = '01';
 end
 
@@ -51,7 +51,7 @@ valid_data = start:1:final;
 if data_type == "KITTI"
     pose_gt = importdata([dataset_dir,'/data_odometry_poses/dataset/poses/',data_num,'.txt']);
 elseif data_type == "CARLA"
-    pose_gt_temp = importdata([dataset_dir,'/CARLA/sequences/',data_num,'/poses.txt']);
+    pose_gt_temp = importdata([dataset_dir,'/sequences/',data_num,'/poses.txt']);
     pose_gt = pose_gt_temp(:,1:12);
 end
 
@@ -87,7 +87,7 @@ velo = cell(n_data,1);
 if data_type == "KITTI"
     for ii=1:n_data
         i = valid_data(1,ii);
-        fid = fopen(sprintf('G:/reinstall_ubuntu/KITTI_odometry/dataset/sequences/%s/velodyne/%06d.bin',data_num,i-1),'rb');
+        fid = fopen(sprintf('%s/data_odometry_velodyne/dataset/sequences/%s/velodyne/%06d.bin',dataset_dir,data_num,i-1),'rb');
         velo{ii,1} = fread(fid,[4 inf],'single')';
         velo{ii,1} = velo{ii,1}(1:1:end,:); % remove points for display speed
         fclose(fid);
@@ -95,7 +95,7 @@ if data_type == "KITTI"
 elseif data_type == "CARLA"
     for ii=1:n_data
         i = valid_data(1,ii);
-        fid = fopen(sprintf('%s/CARLA/sequences/%s/velodyne/%06d.bin',dataset_dir,data_num,i-1));
+        fid = fopen(sprintf('%s/sequences/%s/velodyne/%06d.bin',dataset_dir,data_num,i-1));
         velo{ii,1} = fread(fid,[4 inf],'single')';
         velo{ii,1} = velo{ii,1}(1:1:end,1:4);
         fclose(fid);

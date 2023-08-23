@@ -220,7 +220,6 @@ for iter = iter_start:iter_end
 
     accumulated_dRdt_score(accumulated_dRdt==0) = 0;
 
-
 end 
 
 if video_flag==1
