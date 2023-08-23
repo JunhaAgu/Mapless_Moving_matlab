@@ -58,4 +58,4 @@ In versions under 2021b, some functions in the code could not be supported. Plea
 Just download this repository.
 
 ### (3) Run
-Modify the directory of datasets in **load_Dataset.m** file.
+Modify the directory of datasets in **load_Dataset.m** file and run **main.m**.
