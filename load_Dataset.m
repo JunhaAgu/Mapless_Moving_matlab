@@ -1,7 +1,7 @@
 %% make video
 if video_flag == true
-    framerate = 5;
-    vid_image = VideoWriter('bus_wo_plug.avi');
+    framerate = 10;
+    vid_image = VideoWriter('KITTI_00.avi');
     vid_image.FrameRate = framerate;
     open(vid_image);
 end
@@ -12,7 +12,7 @@ if data_type == "KITTI"
     data_num    = '00';
 elseif data_type == "CARLA"
     dataset_dir = 'H:/mapless_dataset/CARLA';
-    data_num    = '01';
+    data_num    = '03';
 end
 
 if data_type == "KITTI"
@@ -26,7 +26,7 @@ if data_type == "KITTI"
         case '05'
             start = 2350+1; final = 2670+1+1; % 1 ~ 321+2
         case '07'
-            start = 630+1+00; final = 820+1+1; % 1 ~ 190+2
+            start = 630+1; final = 820+1+1; % 1 ~ 190+2
     end
 elseif data_type == "CARLA"
     switch data_num

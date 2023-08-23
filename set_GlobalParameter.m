@@ -13,8 +13,8 @@ data_type = "KITTI";
 % flag_vis = true;
 flag_vis = false;
 
-% video_flag = true;
-video_flag = false;
+video_flag = true;
+% video_flag = false;
 
 %% figure window setting
 if flag_vis == 1

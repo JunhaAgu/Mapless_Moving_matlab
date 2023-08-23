@@ -171,9 +171,9 @@ for iter = iter_start:iter_end
     set(gca,'XColor','k'); set(gca,'YColor','k'); set(gca,'ZColor','k');
 
     view(-90,90);
-    xlim([-40 40]);ylim([-40 40]);zlim([-3 3]);
+    xlim([-20 20]);ylim([-20 20]);zlim([-3 3]);
     xlabel('x[m]'); ylabel('y[m]'); zlabel('z[m]');
-    title(['(next\_update) Iteration: ',num2str(iter), ', Frame: ', num2str(start+iter-1)],'color','black','FontSize',15);
+    title(['Iteration: ',num2str(iter), ', Frame: ', num2str(start+iter-1)],'color','black','FontSize',15);
 
     ax = gca;
     ax.XAxis.LineWidth = 3;

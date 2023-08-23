@@ -43,7 +43,7 @@ function accumulated_dRdt = extractObjectCandidate(accumulated_dRdt, str_next, o
             mean_diff_z = mean(vec_diff_z);
             std_diff_z = sqrt( 1/(length(vec_diff_z)-1)*sum( (vec_diff_z-mean_diff_z*ones(size(vec_diff_z))).^2 ) );
             fprintf('object_idx: %d / std: %f\n',object_idx,std_diff_z);
-            if std_diff_z < 0.08
+            if std_diff_z < 0.07
                 accumulated_dRdt(object_area) = 0;
             end
 
