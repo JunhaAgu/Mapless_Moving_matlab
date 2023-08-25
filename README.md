@@ -1,6 +1,9 @@
 # OMMOCAR: Online Mapless Moving Object detection for 3D LiDAR using oCclusion Accumulation in Range image
+<p align = "center">
+<img src= "https://github.com/JunhaAgu/Mapless_Moving_matlab/blob/main/imgs/thumbnail_white.png" alt="aligned four lidars via the AutoL2LCalib" width="474" height="465">
+</p> 
 
-<img src= "https://github.com/JunhaAgu/Mapless_Moving_matlab/blob/main/imgs/thumbnail_white.png" alt="aligned four lidars via the AutoL2LCalib" width="474" height="465"> <img src= "https://github.com/JunhaAgu/Mapless_Moving_matlab/blob/main/video/KITTI_07.gif" alt="aligned four lidars via the AutoL2LCalib" width="450" height="350">
+<img src= "https://github.com/JunhaAgu/Mapless_Moving_matlab/blob/main/video/KITTI_07.gif" alt="aligned four lidars via the AutoL2LCalib" width="405" height="315"> <img src= "https://github.com/JunhaAgu/Mapless_Moving_matlab/blob/main/video/CARLA_town01.gif" alt="aligned four lidars via the AutoL2LCalib" width="405" height="315">
 
 ## 1. Descriptions
 **Note:** This software is based on our paper (IEEE Transactions on Instrumentation and Measurement):
