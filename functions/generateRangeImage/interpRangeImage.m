@@ -3,7 +3,7 @@ function [img_rho, img_restor_mask] = interpRangeImage(img_rho, n_ring, n_radial
 img_restor_mask   = zeros(n_ring,n_radial);
 img_rho_new = img_rho;
 % for i = 3:n_ring-2
-for i = 24:36 %24: 36 %36:-1:24 %24:36
+for i = 36:-1:24 %24: 36 %36:-1:24 %24:36
 % for i = 20:40 %24: 36 %36:-1:24 %24:36
     for j = 1+2: n_radial-2
         if img_rho(i,j) == 0
