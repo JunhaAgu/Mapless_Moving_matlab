@@ -3,7 +3,13 @@
 <img src= "https://github.com/JunhaAgu/Mapless_Moving_matlab/blob/main/imgs/thumbnail_white.png" alt="aligned four lidars via the AutoL2LCalib" width="474" height="465">
 </p> 
 
-<img src= "https://github.com/JunhaAgu/Mapless_Moving_matlab/blob/main/video/KITTI_07.gif" alt="aligned four lidars via the AutoL2LCalib" width="405" height="315"> <img src= "https://github.com/JunhaAgu/Mapless_Moving_matlab/blob/main/video/CARLA_town01.gif" alt="aligned four lidars via the AutoL2LCalib" width="405" height="315">
+<p align = "center">
+<img src= "https://github.com/JunhaAgu/Mapless_Moving_matlab/blob/main/video/KITTI_07.gif" alt="aligned four lidars via the AutoL2LCalib" width="405" height="315">
+<img src= "https://github.com/JunhaAgu/Mapless_Moving_matlab/blob/main/video/CARLA_town01.gif" alt="aligned four lidars via the AutoL2LCalib" width="405" height="315">
+</p>
+<p align = "center">
+<b>KITTI</b> <i>07</i> (left) and <b>CARLA</b> <i>town01</i> (right)
+</p>
 
 ## 1. Descriptions
 **Note:** This software is based on our paper (IEEE Transactions on Instrumentation and Measurement):
