@@ -21,7 +21,7 @@ The source code is written in two languages: MATLAB and C++.
 
 *The C++ version of the code is uploaded in [OMMOCAR C++ ver](https://github.com/JunhaAgu/mapless_dynamic).*
 
-Four main features of the **OMMOCAR** are like;
+Three main features of the **OMMOCAR** are like;
 - The proposed method **does not require prior information** about objects or maps, and outputs are at the **point level**.
 - By **accumulating occlusion in the range image domain** and using bitwise operations, the computational speed of the proposed method is about 20 Hz or faster, suitable to run in real-time.
 - Because the proposed method is **not coupled with a pose estimation module**, it can be used as the front-end of other 3D LiDAR odometry algorithms.
