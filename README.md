@@ -44,12 +44,12 @@ We evaluate with *00*, *01*, *02*, *05* and *07* of **KITTI odometry**, and *tow
 - **KITTI** *02*: 860  - 950
 - **KITTI** *05*: 2350 - 2670
 - **KITTI** *07*: 630  - 820
-- **CARLA** *town01* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 10 - 370
-- **CARLA** *town01_001* : 10 - 370
-- **CARLA** *town01_002* : 10 - 370
-- **CARLA** *town03* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 10 - 400
-- **CARLA** *town03_001* : 10 - 400
-- **CARLA** *town03_002* : 10 - 400
+- **CARLA** *town01* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 12 - 370
+- **CARLA** *town01_001* : 12 - 370
+- **CARLA** *town01_002* : 12 - 370
+- **CARLA** *town03* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 12 - 400
+- **CARLA** *town03_001* : 12 - 400
+- **CARLA** *town03_002* : 12 - 400
   
 *The subscripts 001 and 002 of the town01 and town03 mean 3D points have zero mean Gaussian noise whose std. is 0.01, 0.02 m.*
 
