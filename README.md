@@ -61,8 +61,8 @@ Recommend: MATLAB version >= 2021b with Windows 10.
 
 In versions under 2021b, some functions in the code could not be supported. Please notify us if you have problems when using the program.
 
-### (2) Installation
+### (b) Installation
 Just download this repository.
 
-### (3) Run
+### (c) Run
 Modify the directory of datasets in **load_Dataset.m** file and run **main.m**.
