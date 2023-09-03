@@ -12,7 +12,7 @@
 </p>
 
 ## 1. Descriptions
-**Note:** This software is based on our paper **(IEEE T-IV)**:
+**Note:** This software is based on our paper **(IEEE T-ITS)**:
 
 The **OMMOCAR** is a program to detect moving objects for 3D LiDAR using occlusion accumulation in range image.
 
