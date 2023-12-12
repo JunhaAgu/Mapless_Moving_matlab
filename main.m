@@ -54,7 +54,7 @@ for iter = iter_start:iter_end
     end
     
     %%% Occlusion accumulation
-    % Compute the occlusion dZdt
+    % Compute the occlusion dRdt
     [rho_cur_warped, dRdt] = dR_warpPointcloud(str_next, str_cur, velo{iter}(:,1:3), T_next2cur, flag_vis, data_type);
 
     % Warp the occlusion accumulation map
@@ -111,7 +111,8 @@ for iter = iter_start:iter_end
 
     % update object_mask
     object_mask = accumulated_dRdt~=0; 
-
+    
+    %%% update accumulated_dRdt & accumulated_dRdt_score after checkSegment
     accumulated_dRdt_score = accumulated_dRdt_score + (accumulated_dRdt~=0);
     accumulated_dRdt = accumulated_dRdt + 4*accumulated_dRdt.*(accumulated_dRdt_score>2);
     accumulated_dRdt(accumulated_dRdt>1e3) = 1e3;
@@ -121,7 +122,7 @@ for iter = iter_start:iter_end
         imagesc(accumulated_dRdt); title('after updateAccum'); colorbar; colormap hsv;
     end
     
-    %%%
+    %%% Fill zero holes of image
     [accumulated_dRdt, accumulated_dRdt_score] = fillImageZeroHoles(accumulated_dRdt, accumulated_dRdt_score, str_next, groundPtsIdx_next, object_thr, flag_vis);
 
     if nnz(accumulated_dRdt) == 0
