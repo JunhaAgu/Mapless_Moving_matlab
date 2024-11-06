@@ -60,8 +60,8 @@ end
 
 groundPtsIdx_next = zeros(size(rho));
 
-thr_distance = 0.1;
-thr_z = 2;
+thr_distance = 0.2;
+thr_z = 3.0;
 
 for i=1:n_row
     for j=1:n_col_sample

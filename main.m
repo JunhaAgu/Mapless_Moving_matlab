@@ -46,7 +46,7 @@ for iter = iter_start:iter_end
     end
 
     fprintf("norm(rot) = %f [deg]\n", norm(rad2deg(rotm2eul(T_next2cur(1:3,1:3)))));
-    if norm(rad2deg(rotm2eul(T_next2cur(1:3,1:3)))) > 3
+    if norm(rad2deg(rotm2eul(T_next2cur(1:3,1:3)))) > 3.0
         object_factor = 1.5;
         object_thr = object_threshold * object_factor;
     else

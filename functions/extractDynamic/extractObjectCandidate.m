@@ -1,7 +1,23 @@
 function accumulated_dRdt = extractObjectCandidate(accumulated_dRdt, str_next, object_threshold, flag_vis)
 
     object_mask = accumulated_dRdt > 0;
-    
+
+    % next_zeros = str_next.rho==0;
+    % 
+    % object_mask_tr = [zeros(1,size(next_zeros,2)) ; object_mask(1:end-1,:)];
+    % 
+    % object_zeros_sum_mask = and(object_mask_tr, next_zeros);
+    % 
+    % [object_label_z, n_label_z] = bwlabel(next_zeros);
+    % for object_idx_z = 1:n_label_z
+    %     object_area_z = (object_label_z == object_idx_z);
+    %     if nnz(object_area_z.*object_zeros_sum_mask)<10
+    %         next_zeros(object_area_z)=0;
+    %     end
+    % end
+    % 
+    % object_zero_mask = or(object_mask, next_zeros);
+
     % Label objects in 2D image
     [object_label, n_label] = bwlabel(object_mask);
     sum_object = zeros(1, n_label);
@@ -43,7 +59,7 @@ function accumulated_dRdt = extractObjectCandidate(accumulated_dRdt, str_next, o
             mean_diff_z = mean(vec_diff_z);
             std_diff_z = sqrt( 1/(length(vec_diff_z)-1)*sum( (vec_diff_z-mean_diff_z*ones(size(vec_diff_z))).^2 ) );
             fprintf('object_idx: %d / std: %f\n',object_idx,std_diff_z);
-            if std_diff_z < 0.08
+            if std_diff_z < 9
                 accumulated_dRdt(object_area) = 0;
             end
 

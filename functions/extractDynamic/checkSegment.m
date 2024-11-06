@@ -1,6 +1,7 @@
 function [accumulated_dRdt_update] = checkSegment(accumulated_dRdt, rho_next, groundPtsIdx_next_comp)
 
 weight_factor = 0.95;
+seg_deg = 5;
 
 accumulated_dRdt_update = accumulated_dRdt;
 
@@ -50,7 +51,7 @@ while(1)
                 end
                 d1 = max( R, rho_next.rho(i,j) );
                 d2 = min( R, rho_next.rho(i,j) );
-                if atan2( d2*sin(azimuth_res*D2R), (d1-d2*cos(azimuth_res*D2R)) ) > 10*D2R
+                if atan2( d2*sin(azimuth_res*D2R), (d1-d2*cos(azimuth_res*D2R)) ) > seg_deg*D2R
                     idx_row = [idx_row ; i];
                     idx_col = [idx_col ; j];
                     check = [check ; 0];
@@ -86,7 +87,7 @@ while(1)
                 else
                     d1 = max( R, rho_next.rho(ii,jj) );
                     d2 = min( R, rho_next.rho(ii,jj) );
-                    if atan2( d2*sin(2*azimuth_res*D2R), (d1-d2*cos(2*azimuth_res*D2R)) ) > 10*D2R
+                    if atan2( d2*sin(2*azimuth_res*D2R), (d1-d2*cos(2*azimuth_res*D2R)) ) > seg_deg*D2R
                         idx_row = [idx_row ; ii];
                         idx_col = [idx_col ; jj];
 

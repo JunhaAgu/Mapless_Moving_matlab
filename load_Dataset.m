@@ -1,7 +1,7 @@
 %% make video
 if video_flag == true
     framerate = 10;
-    vid_image = VideoWriter('KITTI_00.avi');
+    vid_image = VideoWriter('KITTI_05_241105.avi');
     vid_image.FrameRate = framerate;
     open(vid_image);
 end
@@ -9,9 +9,9 @@ end
 %% load dataset
 if data_type == "KITTI"
     dataset_dir = 'E:/KITTI_odometry';
-    data_num    = '00';
+    data_num    = '05';
 elseif data_type == "CARLA"
-    dataset_dir = 'H:/mapless_dataset/CARLA';
+    dataset_dir = 'F:/mapless_dataset/CARLA';
     data_num    = '03';
 end
 

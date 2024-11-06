@@ -2,17 +2,18 @@ function [str_cur_warped, residual] = dR_warpPointcloud(s_next, s_cur, velo, T_g
 %% parameter
 n_v = size(s_next.rho,1); 
 n_h = size(s_next.rho,2);
+dist_pts = 10;
 
 %% representative pts
 velo_x = s_cur.pts(:,:,1)';
 velo_y = s_cur.pts(:,:,2)';
 velo_z = s_cur.pts(:,:,3)';
 velo_cur = [velo_x(:)' ; velo_y(:)' ; velo_z(:)'];
-velo_cur(:,and( and(velo_cur(1,:)<10,velo_cur(1,:)>-10), and(velo_cur(2,:)<10,velo_cur(2,:)>-10) ) ) = [];
+velo_cur(:,and( and(velo_cur(1,:)<dist_pts,velo_cur(1,:)>-dist_pts), and(velo_cur(2,:)<dist_pts,velo_cur(2,:)>-dist_pts) ) ) = [];
 
 %% Far pts are warped by the original pts
 velo_cur_origin = velo';
-velo_cur_origin(:,or( or(velo_cur_origin(1,:)>10,velo_cur_origin(1,:)<-10), or(velo_cur_origin(2,:)>10,velo_cur_origin(2,:)<-10) ) ) = [];
+velo_cur_origin(:,or( or(velo_cur_origin(1,:)>dist_pts,velo_cur_origin(1,:)<-dist_pts), or(velo_cur_origin(2,:)>dist_pts,velo_cur_origin(2,:)<-dist_pts) ) ) = [];
 
 % array of representative and original pts
 velo_cur = [velo_cur, velo_cur_origin];

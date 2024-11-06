@@ -7,14 +7,14 @@ coef_accum_w = [0.5, 0.9];
 object_threshold = 40;
 score_cnt = 0;
 
-% data_type = "KITTI";
-data_type = "CARLA";
+data_type = "KITTI";
+% data_type = "CARLA";
 
 % flag_vis = true;
 flag_vis = false;
 
-% video_flag = true;
-video_flag = false;
+video_flag = true;
+% video_flag = false;
 
 %% figure window setting
 if flag_vis == 1

@@ -1,6 +1,4 @@
 function [input_img, score_img] = fillImageZeroHoles(input_img, score_img, str_next, groundPtsIdx_next_comp, object_threshold, flag_vis)
-    n_row = size(input_img, 1);
-    n_col = size(input_img, 2);
 
     input_img_bin = imfill(input_img>0,'holes');
     input_img = interpAndfill_image(input_img, input_img_bin);
@@ -13,6 +11,10 @@ function [input_img, score_img] = fillImageZeroHoles(input_img, score_img, str_n
     end
 
     rho_zero_value = (str_next.rho==0);
+
+    rho_zero_value(1,:) = 0;
+    rho_zero_value(end,:) = 0;
+    rho_zero_value(end-1,:) = 0;
 
     input_img_mask = input_img>0;
     input_img_tmp = input_img;
@@ -47,19 +49,39 @@ function [input_img, score_img] = fillImageZeroHoles(input_img, score_img, str_n
             rho_roi = str_next.rho.*(input_img_tmp~=0).*object_area_filled;
 
             %%%
+            % if isempty(rho_roi(:))
+            %     continue;
+            % end
+            % mean_col = zeros(1,n_col);
+            % for q = 1:n_col
+            %     col_nnz = nnz(rho_roi(:,q));
+            %     if col_nnz ~= 0
+            %         mean_col(1,q) = sum(rho_roi(:,q))/col_nnz;
+            %     end
+            % end
+            % mean_col_map = repmat(mean_col,64,1);
+            % range_min = mean_col_map - 5;
+            % range_max = mean_col_map + 5;
+
+            rho_roi(rho_roi==0)=[];
             if isempty(rho_roi(:))
                 continue;
             end
-            mean_col = zeros(1,n_col);
-            for q = 1:n_col
-                col_nnz = nnz(rho_roi(:,q));
-                if col_nnz ~= 0
-                    mean_col(1,q) = sum(rho_roi(:,q))/col_nnz;
-                end
+
+            [N_hist,edges_hist] = histcounts(rho_roi(:),50);
+            max_idx = find(N_hist==max(N_hist),1);
+            if edges_hist(max_idx) - 10.0<0
+                range_min = 0;
+            else
+                range_min = edges_hist(max_idx) - 15.0;
             end
-            mean_col_map = repmat(mean_col,64,1);
-            range_min = mean_col_map - 5;
-            range_max = mean_col_map + 5;
+            range_max = edges_hist(max_idx) + 15.0;
+%             if edges_hist(max_idx) - 5.0<0
+%                 range_min = 0;
+%             else
+%                 range_min = edges_hist(max_idx) - 5.0;
+%             end
+%             range_max = edges_hist(max_idx) + 5.0;
 
             rho_zero_filled_rho = str_next.rho.*object_area_filled;
             disconti = and(object_area_filled, or(rho_zero_filled_rho<range_min,rho_zero_filled_rho>range_max));
